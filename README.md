@@ -1,4 +1,4 @@
-# Python Boilerplate
+# Project Name
 
 ![Build Status](https://github.com/iamogbz/py-boilerplate/workflows/Build/badge.svg)
 
