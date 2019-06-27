@@ -3,7 +3,7 @@ ENVARS := $(shell cat ".env" | xargs)
 
 .PHONY: upstream
 upstream:
-	@git remote add upstream https://github.com/iamogbz/oss-boilerplate
+	@git remote add upstream https://github.com/iamogbz/py-boilerplate
 	@git push origin master
 	@git push --all
 	@echo "upstream: remote successfully configured"
