@@ -1,5 +1,4 @@
 $(shell test -s ".env" || cp ".env.example" ".env")
-ENVARS := $(shell cat ".env" | xargs)
 
 .PHONY: upstream
 upstream:
@@ -33,26 +32,9 @@ venv:
 
 .PHONY: install
 install: venv
-	venv/bin/pip install --upgrade pip
-	venv/bin/pip install -Ur requirements.txt
-
-.PHONY: tests
-tests:
-	env ${ENVARS} pytest
-
-.PHONY: test
-test:
-	env ${ENVARS} pytest -s -k $(keyword)
-
-.PHONY: coverage
-coverage:
-	@env ${ENVARS} coverage run --source=. -m pytest
-	@coverage html
-
-.PHONY: build
-build:
-	@echo "Nothing to do"
-	@mkdir ./artifacts && echo "Draft build" > ./artifacts/build
+	venv/bin/python -m pip install -U pip
+	venv/bin/python -m pip install -Ur requirements.txt
+	venv/bin/python -m python_githooks
 
 ifndef VERBOSE
 .SILENT:
