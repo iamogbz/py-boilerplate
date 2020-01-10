@@ -1,4 +1,4 @@
-black==19.3b0
+black==19.10b0
 coverage[toml]==5.0.1
 coveralls==1.7.0
 flake8==3.7.9
