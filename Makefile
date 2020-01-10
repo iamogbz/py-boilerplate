@@ -1,4 +1,9 @@
 $(shell test -s ".env" || cp ".env.example" ".env")
+ifdef CI
+	PYTHON=python
+else
+	PYTHON=venv/bin/python
+endif
 
 .PHONY: upstream
 upstream:
@@ -29,9 +34,9 @@ venv:
 
 .PHONY: install
 install: venv
-	venv/bin/python -m pip install -U pip
-	venv/bin/python -m pip install -Ur requirements.txt
-	venv/bin/python -m python_githooks
+	$(PYTHON) -m pip install -U pip
+	$(PYTHON) -m pip install -Ur requirements.txt
+	$(PYTHON) -m python_githooks
 
 ifndef VERBOSE
 .SILENT:
