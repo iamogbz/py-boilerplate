@@ -1,0 +1,4 @@
+-r prod.txt
+-r tests.txt
+pylint==2.3.1
+py-githooks==1.1.0

@@ -1,5 +1,9 @@
 $(shell test -s ".env" || cp ".env.example" ".env")
-ENVARS := $(shell cat ".env" | xargs)
+ifdef CI
+	PYTHON=python
+else
+	PYTHON=venv/bin/python
+endif
 
 .PHONY: upstream
 upstream:
@@ -21,10 +25,7 @@ eject:
 help:
 	@echo "make help                         - show commands that can be run"
 	@echo "make install                      - install project requirements"
-	@echo "make test keyword='Parse'         - run only test match keyword"
-	@echo "make tests                        - run all tests"
-	@echo "make coverage                     - run all tests and collect coverage"
-	@echo "make build                        - build executable from src"
+	@echo "inv --list                        - show installed invoke commands"
 
 .PHONY: venv
 venv:
@@ -33,26 +34,9 @@ venv:
 
 .PHONY: install
 install: venv
-	venv/bin/pip install --upgrade pip
-	venv/bin/pip install -Ur requirements.txt
-
-.PHONY: tests
-tests:
-	env ${ENVARS} pytest
-
-.PHONY: test
-test:
-	env ${ENVARS} pytest -s -k $(keyword)
-
-.PHONY: coverage
-coverage:
-	@env ${ENVARS} coverage run --source=. -m pytest
-	@coverage html
-
-.PHONY: build
-build:
-	@echo "Nothing to do"
-	@mkdir ./artifacts && echo "Draft build" > ./artifacts/build
+	$(PYTHON) -m pip install -U pip
+	$(PYTHON) -m pip install -Ur requirements.txt
+	$(PYTHON) -m python_githooks
 
 ifndef VERBOSE
 .SILENT:
