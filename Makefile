@@ -20,10 +20,7 @@ eject:
 help:
 	@echo "make help                         - show commands that can be run"
 	@echo "make install                      - install project requirements"
-	@echo "make test keyword='Parse'         - run only test match keyword"
-	@echo "make tests                        - run all tests"
-	@echo "make coverage                     - run all tests and collect coverage"
-	@echo "make build                        - build executable from src"
+	@echo "inv --list                        - show installed invoke commands"
 
 .PHONY: venv
 venv:
