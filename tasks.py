@@ -37,7 +37,7 @@ def lint(ctx, fix=False):
 @task(
     help={
         "coverage": "Build and report on test coverage",
-        "dev": "Use syrupy development version",
+        "dev": "Add development source files to environment",
         "test-pattern": "Pattern used to select test files to run",
         "verbose": "Verbose output e.g. non captured logs etc.",
     }
@@ -54,8 +54,6 @@ def test(ctx, coverage=False, dev=False, test_pattern=None, verbose=False):
     if coverage:
         if not os.environ.get("CI"):
             ctx.run("coverage report", pty=True)
-        else:
-            ctx.run("codecov", pty=True)
 
 
 @task(pre=[clean])

@@ -27,7 +27,7 @@ jobs:
         invoke lint
     - name: Test
       run: |
-        invoke test --coverage
+        invoke test --dev --coverage
     - name: Build
       run: |
         invoke build
