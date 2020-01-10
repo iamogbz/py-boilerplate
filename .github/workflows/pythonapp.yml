@@ -22,10 +22,10 @@ jobs:
         make install
     - name: Lint
       run: |
-        make lint
+        invoke lint
     - name: Test
       run: |
-        make test --coverage
+        invoke test --coverage
     - name: Build
       run: |
         invoke build
