@@ -20,7 +20,7 @@ jobs:
     - name: Install
       run: |
         make install
-        source venv/bin/activate
+        . venv/bin/activate
     - name: Lint
       run: |
         invoke lint
