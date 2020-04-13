@@ -1,5 +1,5 @@
 black==19.10b0
-coverage[toml]==5.0.4
+coverage[toml]==5.1
 coveralls==2.0.0
 flake8==3.7.9
 invoke==1.4.1
