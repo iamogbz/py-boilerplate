@@ -1,5 +1,5 @@
 black==21.12b0
-coverage[toml]==6.2
+coverage[toml]==6.3
 flake8==4.0.1
 invoke==1.6.0
 isort==5.10.1
