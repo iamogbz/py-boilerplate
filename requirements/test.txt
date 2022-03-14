@@ -3,6 +3,6 @@ coverage[toml]==6.3.2
 flake8==4.0.1
 invoke==1.6.0
 isort==5.10.1
-mypy==0.931
+mypy==0.940
 pytest==7.0.1
 pytest-mock==3.7.0
