@@ -4,5 +4,5 @@ flake8==4.0.1
 invoke==1.7.0
 isort==5.10.1
 mypy==0.942
-pytest==7.1.1
+pytest==7.1.2
 pytest-mock==3.7.0
