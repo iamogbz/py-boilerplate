@@ -1,7 +1,7 @@
 black==22.10.0
 coverage[toml]==6.5.0
 flake8==5.0.4
-invoke==1.7.3
+invoke==2.1.3
 isort==5.10.1
 mypy==0.991
 pytest==7.2.0
