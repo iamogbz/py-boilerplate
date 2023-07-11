@@ -4,7 +4,6 @@ on: [push]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -12,22 +11,25 @@ jobs:
       fail-fast: true
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Setup
-      uses: actions/setup-python@v1
-      with:
-        python-version: ${{ matrix.python-version }}
-    - name: Install
-      env:
-        CI: 1
-      run: |
-        make install
-    - name: Lint
-      run: |
-        invoke lint
-    - name: Test
-      run: |
-        invoke test --dev --coverage
-    - name: Build
-      run: |
-        invoke build
+      - uses: actions/checkout@v1
+      - name: Setup
+        uses: actions/setup-python@v1
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install
+        env:
+          CI: 1
+        run: |
+          . script/bootstrap
+      - name: Lint
+        run: |
+          . venv/bin/activate
+          invoke lint
+      - name: Test
+        run: |
+          . venv/bin/activate
+          invoke test --dev --coverage
+      - name: Build
+        run: |
+          . venv/bin/activate
+          invoke build

@@ -4,3 +4,4 @@ artifacts
 coverage.xml
 htmlcov
 venv
+*.pyc

@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+. script/env
+
+python -m pip install -U pip
+python -m pip install -Ur requirements.txt
+python -m python_githooks

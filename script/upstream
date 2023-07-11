@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+git remote add upstream https://github.com/iamogbz/py-boilerplate
+git push origin master
+git push --all
+echo "upstream: remote successfully configured"
