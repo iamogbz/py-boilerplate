@@ -4,8 +4,8 @@
 
 Simple package with some preconfigurations
 
-## Shell Commands
+## Setup
 
 ```sh
-make help
+. script/bootstrap
 ```

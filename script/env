@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+ test -s ".env" || cp ".env.example" ".env"
+
+# ifdef CI
+# 	PYTHON=python
+# else
+# 	PYTHON=venv/bin/python
+# endif

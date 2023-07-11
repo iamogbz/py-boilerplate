@@ -11,7 +11,7 @@ These are mostly guidelines, not rules. Use your best judgment, and feel free to
 
 [What should I know before I get started?](#what-should-i-know-before-i-get-started)
 
-- [GNU Make and Bash](#make-and-bash)
+- [Bash script](#bash)
 
 [How Can I Contribute?](#how-can-i-contribute)
 
@@ -37,9 +37,8 @@ This project and everyone participating in it is governed by our [Code of Conduc
 
 ## What should I know before I get started?
 
-### Make and Bash
+### Bash
 
-- [Makefiles](https://www.gnu.org/software/make/manual/html_node/Introduction.html)
 - [Bourne Again Shell](https://www.gnu.org/software/bash/manual/html_node/index.html#Top)
 
 ## How Can I Contribute?
