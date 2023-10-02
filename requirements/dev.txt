@@ -1,4 +1,4 @@
 -r prod.txt
 -r test.txt
-pylint==2.17.6
+pylint==2.17.7
 py-githooks==1.1.1
